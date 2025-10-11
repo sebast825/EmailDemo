@@ -1,0 +1,15 @@
+D:\Documentos\EmailServiceDemo\EmailServiceDemo\obj\Debug\net8.0\EmailServiceDemo.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documentos\EmailServiceDemo\EmailServiceDemo\obj\Debug\net8.0\EmailServiceDemo.AssemblyInfoInputs.cache
+D:\Documentos\EmailServiceDemo\EmailServiceDemo\obj\Debug\net8.0\EmailServiceDemo.AssemblyInfo.cs
+D:\Documentos\EmailServiceDemo\EmailServiceDemo\obj\Debug\net8.0\EmailServiceDemo.csproj.CoreCompileInputs.cache
+D:\Documentos\EmailServiceDemo\EmailServiceDemo\obj\Debug\net8.0\EmailServiceDemo.sourcelink.json
+D:\Documentos\EmailServiceDemo\EmailServiceDemo\bin\Debug\net8.0\EmailServiceDemo.exe
+D:\Documentos\EmailServiceDemo\EmailServiceDemo\bin\Debug\net8.0\EmailServiceDemo.deps.json
+D:\Documentos\EmailServiceDemo\EmailServiceDemo\bin\Debug\net8.0\EmailServiceDemo.runtimeconfig.json
+D:\Documentos\EmailServiceDemo\EmailServiceDemo\bin\Debug\net8.0\EmailServiceDemo.dll
+D:\Documentos\EmailServiceDemo\EmailServiceDemo\bin\Debug\net8.0\EmailServiceDemo.pdb
+D:\Documentos\EmailServiceDemo\EmailServiceDemo\obj\Debug\net8.0\EmailServiceDemo.dll
+D:\Documentos\EmailServiceDemo\EmailServiceDemo\obj\Debug\net8.0\refint\EmailServiceDemo.dll
+D:\Documentos\EmailServiceDemo\EmailServiceDemo\obj\Debug\net8.0\EmailServiceDemo.pdb
+D:\Documentos\EmailServiceDemo\EmailServiceDemo\obj\Debug\net8.0\EmailServiceDemo.genruntimeconfig.cache
+D:\Documentos\EmailServiceDemo\EmailServiceDemo\obj\Debug\net8.0\ref\EmailServiceDemo.dll
