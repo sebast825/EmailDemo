@@ -1,0 +1,12 @@
+D:\Documentos\EmailServiceDemo\Core\bin\Debug\net8.0\Core.deps.json
+D:\Documentos\EmailServiceDemo\Core\bin\Debug\net8.0\Core.dll
+D:\Documentos\EmailServiceDemo\Core\bin\Debug\net8.0\Core.pdb
+D:\Documentos\EmailServiceDemo\Core\obj\Debug\net8.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documentos\EmailServiceDemo\Core\obj\Debug\net8.0\Core.AssemblyInfoInputs.cache
+D:\Documentos\EmailServiceDemo\Core\obj\Debug\net8.0\Core.AssemblyInfo.cs
+D:\Documentos\EmailServiceDemo\Core\obj\Debug\net8.0\Core.csproj.CoreCompileInputs.cache
+D:\Documentos\EmailServiceDemo\Core\obj\Debug\net8.0\Core.sourcelink.json
+D:\Documentos\EmailServiceDemo\Core\obj\Debug\net8.0\Core.dll
+D:\Documentos\EmailServiceDemo\Core\obj\Debug\net8.0\refint\Core.dll
+D:\Documentos\EmailServiceDemo\Core\obj\Debug\net8.0\Core.pdb
+D:\Documentos\EmailServiceDemo\Core\obj\Debug\net8.0\ref\Core.dll

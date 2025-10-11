@@ -14,4 +14,4 @@
     <ProjectReference Include="..\Core\Core.csproj" />
   </ItemGroup>
 
-Model</Project>
+</Project>
