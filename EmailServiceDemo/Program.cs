@@ -14,13 +14,13 @@ var configuration = new ConfigurationBuilder()
 
 
 services.AddSingleton<IConfiguration>(configuration);
-services.AddScoped<SendEmailI, SmtpService>();
+services.AddScoped<EmailOptions, SmtpService>();
 
 var provider = services.BuildServiceProvider();
 
-var emailService = provider.GetRequiredService<SendEmailI>();
+var emailService = provider.GetRequiredService<EmailOptions>();
 
-await emailService.SendAsync("test@gmail.com","a","b");
+await emailService.HelloEmailSend("test@gmail.com");
 
 
 Console.WriteLine("Hello, World!");

@@ -9,13 +9,13 @@ using System.Runtime.CompilerServices;
 namespace EmailServices
 {
 
-    public class SmtpService : SendEmailI
+    public class SmtpService : EmailOptions
     {
         private readonly IConfiguration _configuration;
         public SmtpService(IConfiguration configuration) {
             _configuration = configuration;
         }
-        public async Task SendEmailAsync(string to, string subject, string htmlBody)
+        private async Task SendEmailAsync(string to, string subject, string htmlBody)
         {
             try
             {
@@ -23,11 +23,7 @@ namespace EmailServices
                 string contrasenia = _configuration["CorreoSettings:Contrasenia"];
                 string url = $"http://localhost:3000/recuperarClave/?token=";
 
-                MailMessage mailMessage = new MailMessage(emailOrigen, to, "Recuperación de Contraseña",
-                    $"<p>Hemos recibido una solicitud para restablecer la contraseña de tu cuenta. Si fuiste tú quien solicitó este cambio, haz clic en el siguiente enlace:</p>" +
-                    $"<a href='{url}'>Recuperar contraseña</a>" +
-                    "<p>Si no solicitaste este cambio, ignora este correo.</p>" +
-                    "<p>Saludos, Clinica Horizonte Demo</p>");
+                MailMessage mailMessage = new MailMessage(emailOrigen, to, subject,subject);
 
                 mailMessage.IsBodyHtml = true;
 
@@ -46,6 +42,14 @@ namespace EmailServices
             {
                 throw new Exception($"Error enviando email: {ex.Message}");
             }
+        }
+
+        public async Task HelloEmailSend(string to)
+        {
+            string subject = "Bienvenido!";
+            string htmlBody = "<p>¡Bienvenido a nuestro sitio! Explora y descubre todo lo que ofrecemos.</p>";
+
+            await SendEmailAsync(to, subject, htmlBody);
         }
     }
 }

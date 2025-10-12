@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Core.Interface
 {
-    public interface SendEmailI
+    public interface EmailOptions
     {
-        Task SendEmailAsync(string to, string subject, string htmlBody);
+        Task HelloEmailSend(string to);
 
     }
 }
