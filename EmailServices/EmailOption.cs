@@ -8,10 +8,10 @@ using Microsoft.Extensions.Configuration;
 namespace EmailServices
 {
 
-    public class SmtpService : EmailOptions
+    public class EmailOption : EmailOptionI
     {
         private readonly SmtpSender _smtpSender;
-        public SmtpService(SmtpSender smtpSender) {
+        public EmailOption(SmtpSender smtpSender) {
             _smtpSender = smtpSender;
         }
         

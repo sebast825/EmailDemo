@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.Interface
 {
-    public interface EmailOptions
+    public interface EmailOptionI
     {
         Task HelloEmailSend(string to);
 

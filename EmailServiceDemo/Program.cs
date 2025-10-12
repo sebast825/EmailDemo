@@ -14,11 +14,11 @@ var configuration = new ConfigurationBuilder()
 
 
 services.AddSingleton<IConfiguration>(configuration);
-services.AddScoped<EmailOptions, SmtpService>();
+services.AddScoped<EmailOptionI, EmailOption>();
 services.AddScoped<SmtpSender>();
 var provider = services.BuildServiceProvider();
 
-var emailService = provider.GetRequiredService<EmailOptions>();
+var emailService = provider.GetRequiredService<EmailOptionI>();
 
 await emailService.HelloEmailSend(configuration["CorreoSettings:EmailDestino"]);
 
