@@ -1,8 +1,5 @@
-﻿
-
-using Core.Interface;
-using Microsoft.Extensions.Configuration;
-
+﻿using Core.Interface;
+using Core.Templates;
 
 
 namespace EmailServices
@@ -18,8 +15,8 @@ namespace EmailServices
 
         public async Task HelloEmailSend(string to)
         {
-            string subject = "Bienvenido!";
-            string htmlBody = "<p>¡Bienvenido a nuestro sitio! Explora y descubre todo lo que ofrecemos.</p>";
+            string subject = EmailTemplatesOptions.Welcome.Subject;
+            string htmlBody = EmailTemplatesOptions.Welcome.Body;
 
             await _smtpSender.SendEmailAsync(to, subject, htmlBody);
         }
