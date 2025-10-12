@@ -15,12 +15,12 @@ var configuration = new ConfigurationBuilder()
 
 services.AddSingleton<IConfiguration>(configuration);
 services.AddScoped<EmailOptions, SmtpService>();
-
+services.AddScoped<SmtpSender>();
 var provider = services.BuildServiceProvider();
 
 var emailService = provider.GetRequiredService<EmailOptions>();
 
-await emailService.HelloEmailSend("test@gmail.com");
+await emailService.HelloEmailSend(configuration["CorreoSettings:EmailDestino"]);
 
 
 Console.WriteLine("Hello, World!");
