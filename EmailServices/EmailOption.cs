@@ -1,4 +1,5 @@
-﻿using Core.Interface;
+﻿using Core.Entities;
+using Core.Interface;
 using Core.Templates;
 
 
@@ -13,12 +14,23 @@ namespace EmailServices
         }
         
 
-        public async Task HelloEmailSend(string to)
+        public async Task Welcome(string to)
         {
             string subject = EmailTemplatesOptions.Welcome.Subject;
             string htmlBody = EmailTemplatesOptions.Welcome.Body;
 
             await _smtpSender.SendEmailAsync(to, subject, htmlBody);
         }
+
+        public async Task Notification(string to,string userName,string message)
+        {
+            EmailTemplateContent notification =  EmailTemplatesOptions.Notifiaction(userName, message);
+            string subject = notification.Subject;
+            string htmlBody = notification.Body;
+
+            await _smtpSender.SendEmailAsync(to, subject, htmlBody);
+        }
+
+    
     }
 }

@@ -8,7 +8,8 @@ namespace Core.Interface
 {
     public interface EmailOptionI
     {
-        Task HelloEmailSend(string to);
+        Task Welcome(string to);
+        Task Notification(string to, string userName, string message);
 
     }
 }

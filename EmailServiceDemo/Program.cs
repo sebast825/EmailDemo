@@ -20,7 +20,8 @@ var provider = services.BuildServiceProvider();
 
 var emailService = provider.GetRequiredService<EmailOptionI>();
 
-await emailService.HelloEmailSend(configuration["CorreoSettings:EmailDestino"]);
+//await emailService.Welcome(configuration["CorreoSettings:EmailDestino"]);
+await emailService.Notification(configuration["CorreoSettings:EmailDestino"], "Carmelio", "Este es un mensaje importante!");
 
 
 Console.WriteLine("Hello, World!");
