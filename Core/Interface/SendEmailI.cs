@@ -8,7 +8,7 @@ namespace Core.Interface
 {
     public interface SendEmailI
     {
-        Task SendAsync(string to, string subject, string htmlBody);
+        Task SendEmailAsync(string to, string subject, string htmlBody);
 
     }
 }

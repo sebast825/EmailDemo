@@ -15,7 +15,7 @@ namespace EmailServices
         public SmtpService(IConfiguration configuration) {
             _configuration = configuration;
         }
-        public async Task SendAsync(string to, string subject, string htmlBody)
+        public async Task SendEmailAsync(string to, string subject, string htmlBody)
         {
             try
             {
