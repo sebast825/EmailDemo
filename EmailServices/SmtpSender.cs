@@ -29,9 +29,9 @@ namespace EmailServices
 
                 using SmtpClient smtpClient = new SmtpClient
                 {
-                    Host = "smtp.gmail.com",
-                    Port = 587,
-                    EnableSsl = true,
+                    Host = _configuration["CorreoSettings:SmtpHost"]!,
+                    Port = int.Parse(_configuration["CorreoSettings:SmtpPort"]!),
+                    EnableSsl = bool.Parse(_configuration["CorreoSettings:EnableSsl"]!),
                     UseDefaultCredentials = false,
                     Credentials = new System.Net.NetworkCredential(emailOrigen, contrasenia)
                 };
