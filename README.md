@@ -1,5 +1,5 @@
 
-# EmailServiceDemo
+# Email Service Demo
 
 EmailServiceDemo is a C# console application that allows sending emails via SMTP in a modular and scalable way.
 
@@ -23,3 +23,30 @@ EmailServiceDemo/
 
 ```
 
+
+- **Core** – Business models, templates, and interfaces  
+- **Services** – SMTP sender and email service logic  
+- **Console** – Application entry point  
+
+## Configuration
+
+An `appsettings.json` file is required to set up SMTP credentials and sender info.  
+Example:
+
+```json
+{
+  "CorreoSettings": {
+    "EmailOrigen": "example@gmail.com",
+    "Contrasenia": "your-app-password",
+    "SmtpHost": "smtp.gmail.com",
+    "SmtpPort": 587,
+    "EnableSsl": true
+  }
+}
+```
+
+## Usage
+
+- Configure appsettings.json
+- Run the console project
+- The app will send predefined or custom emails depending on configuration
