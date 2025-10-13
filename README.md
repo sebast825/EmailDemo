@@ -44,6 +44,8 @@ Example:
   }
 }
 ```
+> **Note:** The `appsettings.json` file should be located inside the **EmailServiceDemo.Console** project, as this is the entry point of the application. The settings will be loaded from there at runtime.
+
 
 ## Usage
 
