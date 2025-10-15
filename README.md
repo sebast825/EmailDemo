@@ -1,5 +1,5 @@
 
-# ModularEmailSender
+# Modular Email Sender
 
 Is a C# console application that allows sending emails via SMTP in a modular and scalable way.
 
