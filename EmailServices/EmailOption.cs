@@ -8,9 +8,9 @@ namespace EmailServices
 
     public class EmailOption : EmailOptionI
     {
-        private readonly SmtpSender _smtpSender;
-        public EmailOption(SmtpSender smtpSender) {
-            _smtpSender = smtpSender;
+        private readonly PostmarkSender _sender;
+        public EmailOption(PostmarkSender sender) {
+            _sender = sender;
         }
         
 
@@ -19,7 +19,7 @@ namespace EmailServices
             string subject = EmailTemplatesOptions.Welcome.Subject;
             string htmlBody = EmailTemplatesOptions.Welcome.Body;
 
-            await _smtpSender.SendEmailAsync(to, subject, htmlBody);
+            await _sender.SendEmailAsync(to, subject, htmlBody);
         }
 
         public async Task Notification(string to,string userName,string message)
@@ -28,7 +28,7 @@ namespace EmailServices
             string subject = notification.Subject;
             string htmlBody = notification.Body;
 
-            await _smtpSender.SendEmailAsync(to, subject, htmlBody);
+            await _sender.SendEmailAsync(to, subject, htmlBody);
         }
 
     

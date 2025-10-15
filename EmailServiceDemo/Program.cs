@@ -15,7 +15,7 @@ var configuration = new ConfigurationBuilder()
 
 services.AddSingleton<IConfiguration>(configuration);
 services.AddScoped<EmailOptionI, EmailOption>();
-services.AddScoped<SmtpSender>();
+services.AddScoped<PostmarkSender>();
 var provider = services.BuildServiceProvider();
 
 var emailService = provider.GetRequiredService<EmailOptionI>();
@@ -24,4 +24,4 @@ var emailService = provider.GetRequiredService<EmailOptionI>();
 await emailService.Notification(configuration["CorreoSettings:EmailDestino"], "Carmelio", "Este es un mensaje importante!");
 
 
-Console.WriteLine("Hello, World!");
+Console.WriteLine("Message Sent!");
