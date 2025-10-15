@@ -16,7 +16,7 @@ namespace EmailServices
         public async Task Welcome(string to)
         {
             string subject = EmailTemplatesOptions.Welcome.Subject;
-            string htmlBody = EmailTemplatesOptions.Welcome.Body;
+            string htmlBody = EmailTemplatesOptions.Welcome.HtmlBody;
 
             await _emailSender.SendEmailAsync(to, subject, htmlBody);
         }
@@ -25,7 +25,7 @@ namespace EmailServices
         {
             EmailTemplateContent notification =  EmailTemplatesOptions.Notifiaction(userName, message);
             string subject = notification.Subject;
-            string htmlBody = notification.Body;
+            string htmlBody = notification.HtmlBody;
 
             await _emailSender.SendEmailAsync(to, subject, htmlBody);
         }
