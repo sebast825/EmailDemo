@@ -19,6 +19,7 @@ EmailServiceDemo/
 ├─ Services/
 │       ├─ SmtpSender.cs 
 │       └─ EmailService.cs
+│       └─ PostmarkSender.cs
 ├─ EmailServiceDemo.Console/
 
 ```
@@ -52,3 +53,29 @@ Example:
 - Configure appsettings.json
 - Run the console project
 - The app will send predefined or custom emails depending on configuration
+
+
+## Switching Between Email Senders
+
+The application supports multiple email providers (SMTP and Postmark).
+
+To switch between them:
+
+1. **In `EmailOption.cs`** – Change the injected sender class (`SmtpSender` or `PostmarkSender`) used inside the constructor.
+2. **In `Program.cs`** – Update the dependency injection registration to match the chosen sender.
+
+Example:
+```csharp
+// For Postmark
+services.AddScoped<EmailSenderI, PostmarkSender>();
+
+// For SMTP
+services.AddScoped<EmailSenderI, SmtpSender>();
+```
+
+### Naming Convention for Interfaces
+
+In this project, all interfaces are named with an **`I` suffix** (e.g., `EmailSenderI`, `EmailOptionI`).
+
+Although the standard C# convention uses a leading `I` (e.g., `IEmailSender`), this project follows a trailing `I` pattern for easier discoverability when searching or using autocomplete in large codebases.
+
