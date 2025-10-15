@@ -73,7 +73,15 @@ services.AddScoped<EmailSenderI, PostmarkSender>();
 services.AddScoped<EmailSenderI, SmtpSender>();
 ```
 
-### Naming Convention for Interfaces
+## Postmark Configuration (Optional)
+
+To enable sending emails via Postmark:
+
+1. Create a free account on [Postmark](https://postmarkapp.com/).
+2. Verify a sender email or domain.
+3. Obtain your API Key and configure it in the project.
+
+## Naming Convention for Interfaces
 
 In this project, all interfaces are named with an **`I` suffix** (e.g., `EmailSenderI`, `EmailOptionI`).
 
