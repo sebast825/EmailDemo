@@ -20,8 +20,8 @@ namespace EmailServices
         {
             try
             {
-                string emailOrigen = _configuration["CorreoSettings:EmailOrigen"];
-                string contrasenia = _configuration["CorreoSettings:Contrasenia"];
+                string emailOrigen = _configuration["SmtpSettings:EmailOrigen"];
+                string contrasenia = _configuration["SmtpSettings:Contrasenia"];
                 string url = $"http://localhost:3000/recuperarClave/?token=";
 
                 MailMessage mailMessage = new MailMessage(emailOrigen, to, subject, htmlBody);
@@ -30,9 +30,9 @@ namespace EmailServices
 
                 using SmtpClient smtpClient = new SmtpClient
                 {
-                    Host = _configuration["CorreoSettings:SmtpHost"]!,
-                    Port = int.Parse(_configuration["CorreoSettings:SmtpPort"]!),
-                    EnableSsl = bool.Parse(_configuration["CorreoSettings:EnableSsl"]!),
+                    Host = _configuration["SmtpSettings:SmtpHost"]!,
+                    Port = int.Parse(_configuration["SmtpSettings:SmtpPort"]!),
+                    EnableSsl = bool.Parse(_configuration["SmtpSettings:EnableSsl"]!),
                     UseDefaultCredentials = false,
                     Credentials = new System.Net.NetworkCredential(emailOrigen, contrasenia)
                 };
