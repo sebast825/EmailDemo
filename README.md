@@ -77,7 +77,7 @@ services.AddScoped<EmailSenderI, SmtpSender>();
 
 To enable sending emails via Postmark:
 
-1. Create a free account on [Postmark](https://postmarkapp.com/).
+1. Create a free account on <a href="https://postmarkapp.com/" target="_blank">Postmark</a>.
 2. Verify a sender email or domain.
 3. Obtain your API Key and configure it in the project.
 
