@@ -11,17 +11,19 @@ namespace EmailServices
 {
     public class PostmarkSender : EmailSenderI
     {
-       
-            private readonly IConfiguration _configuration;
 
-            public PostmarkSender(IConfiguration configuration)
-            {
-                _configuration = configuration;
-            }
+        private readonly IConfiguration _configuration;
 
-            public async Task SendEmailAsync(string to, string subject, string htmlBody)
+        public PostmarkSender(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
+        public async Task SendEmailAsync(string to, string subject, string htmlBody)
+        {
+
+            try
             {
-                // Send an email asynchronously:
                 var message = new PostmarkMessage()
                 {
                     To = to,
@@ -37,10 +39,19 @@ namespace EmailServices
 
                 var client = new PostmarkClient(_configuration["PostmarkSettings:ApiKey"]);
                 var sendResult = await client.SendMessageAsync(message);
+                if (sendResult.Status != PostmarkStatus.Success)
+                {
+                    var errorMsg = $"Postmark failed: {sendResult.Message} (ErrorCode: {sendResult.ErrorCode})";
 
-                if (sendResult.Status == PostmarkStatus.Success) { /* Handle success */ }
-                else { /* Resolve issue.*/ }
+                    throw new Exception(errorMsg);
+                }
+            }
+            catch (Exception ex)
+            {
+                var msg = $"Error enviando email a {to}: {ex.Message}";
+
+                throw;
             }
         }
-    
+    }
 }
