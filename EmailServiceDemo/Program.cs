@@ -5,6 +5,7 @@ using Core.Interface;
 using EmailServices;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Net.Mail;
 
 var services = new ServiceCollection();
 
@@ -15,7 +16,7 @@ var configuration = new ConfigurationBuilder()
 
 services.AddSingleton<IConfiguration>(configuration);
 services.AddScoped<EmailOptionI, EmailOption>();
-services.AddScoped<PostmarkSender>();
+services.AddScoped<EmailSenderI,SmtpSender>();
 var provider = services.BuildServiceProvider();
 
 var emailService = provider.GetRequiredService<EmailOptionI>();
