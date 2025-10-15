@@ -9,7 +9,7 @@ namespace Core.Interface
     public interface EmailOptionI
     {
         Task Welcome(string to);
-        Task Notification(string to, string userName, string message);
+        Task SendUserNotificationAsync(string to, string userName, string message);
 
     }
 }

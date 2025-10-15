@@ -21,7 +21,7 @@ namespace EmailServices
             await _emailSender.SendEmailAsync(to, subject, htmlBody);
         }
 
-        public async Task Notification(string to,string userName,string message)
+        public async Task SendUserNotificationAsync(string to,string userName,string message)
         {
             EmailTemplateContent notification =  EmailTemplatesOptions.Notifiaction(userName, message);
             string subject = notification.Subject;
