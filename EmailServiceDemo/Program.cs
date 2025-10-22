@@ -15,11 +15,11 @@ var configuration = new ConfigurationBuilder()
 
 
 services.AddSingleton<IConfiguration>(configuration);
-services.AddScoped<EmailOptionI, EmailOption>();
-services.AddScoped<EmailSenderI,SmtpSender>();
+services.AddScoped<IEmailOption, EmailOption>();
+services.AddScoped<IEmailSender,SmtpSender>();
 var provider = services.BuildServiceProvider();
 
-var emailService = provider.GetRequiredService<EmailOptionI>();
+var emailService = provider.GetRequiredService<IEmailOption>();
 
 //await emailService.Welcome(configuration["CorreoSettings:EmailDestino"]);
 await emailService.SendUserNotificationAsync(configuration["PostmarkSettings:EmailDestino"], "Carmelio", "Este es un mensaje importante!");

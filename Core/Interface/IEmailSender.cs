@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Core.Interface
 {
-    public interface EmailOptionI
+    public interface IEmailSender
     {
-        Task Welcome(string to);
-        Task SendUserNotificationAsync(string to, string userName, string message);
-
+        Task SendEmailAsync(string to, string subject, string htmlBody);
     }
 }

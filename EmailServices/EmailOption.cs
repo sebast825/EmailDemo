@@ -6,10 +6,10 @@ using Core.Templates;
 namespace EmailServices
 {
 
-    public class EmailOption : EmailOptionI
+    public class EmailOption : IEmailOption
     {
-        private readonly EmailSenderI _emailSender;
-        public EmailOption(EmailSenderI emailSender) {
+        private readonly IEmailSender _emailSender;
+        public EmailOption(IEmailSender emailSender) {
             _emailSender = emailSender;
         }
         

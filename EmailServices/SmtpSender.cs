@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EmailServices
 {
-    public class SmtpSender : EmailSenderI
+    public class SmtpSender : IEmailSender
     {
         private readonly IConfiguration _configuration;
         public SmtpSender(IConfiguration configuration)

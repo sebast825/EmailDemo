@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EmailServices
 {
-    public class PostmarkSender : EmailSenderI
+    public class PostmarkSender : IEmailSender
     {
 
         private readonly IConfiguration _configuration;
