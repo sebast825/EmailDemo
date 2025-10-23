@@ -11,10 +11,10 @@ namespace Core.Entities
 
         public string Subject { get; set; }
         public string HtmlBody { get; set; }
-        public EmailTemplateContent(string subject, string HtmlBody)
+        public EmailTemplateContent(string subject, string htmlBody)
         {
             Subject = subject;
-            HtmlBody = HtmlBody;
+            HtmlBody = htmlBody;
         }
     }
 }
