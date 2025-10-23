@@ -27,7 +27,7 @@ namespace EmailServices
                 var message = new PostmarkMessage()
                 {
                     To = to,
-                    From = _configuration["PostmarkSettings:EmailOrigen"],
+                    From = _configuration["PostmarkSettings:SenderEmail"],
                     TrackOpens = true,
                     Subject = subject,
                     HtmlBody = htmlBody,
