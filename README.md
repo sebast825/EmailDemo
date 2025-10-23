@@ -11,18 +11,23 @@ An appsettings.json file is required to configure the email settings (SMTP, emai
 
 ```
 EmailServiceDemo/
+│
 ├─ Core/
 │   ├─ Entities/
 │   ├─ Templates/
 │   ├─ Interfaces/
+│
 ├─ Services/
 │       ├─ SmtpSender.cs 
 │       └─ EmailService.cs
 │       └─ PostmarkSender.cs
+│
 ├─ EmailServiceDemo.Console/
 │       ├─ appSettingsExample.cs
 │       ├─ program.cs
-
+│
+├─ Tests/
+│       ├─ appSettingsExample.Test.cs
 
 ```
 
@@ -100,3 +105,32 @@ To enable sending emails via Postmark:
 2. Verify a sender email or domain.
 3. Obtain your API Key and configure it in the project.
 
+
+
+## Tests
+
+### Prerequisites
+1. Create `appsettings.Test.json` in the test project (use `appsettingsExample.Test.json` as reference)
+
+### Running Tests
+```bash
+# Navigate to test project
+cd tests
+
+# Run all tests
+dotnet test
+
+# Run only integration tests  
+dotnet test --filter TestCategory=Integration
+```
+
+### Skipping Postmark Tests
+- If you don't have Postmark credentials, comment out the [TestClass] attribute:
+
+```bash
+// [TestClass]  // Comment this line to skip Postmark tests
+public class PostmarkSenderIntegrationTests
+{
+    // Tests will be skipped
+}
+```
