@@ -20,8 +20,8 @@ namespace EmailServices
         {
             try
             {
-                string emailOrigen = _configuration["SmtpSettings:EmailOrigen"];
-                string contrasenia = _configuration["SmtpSettings:Contrasenia"];
+                string emailOrigen = _configuration["SmtpSettings:SenderEmail"];
+                string contrasenia = _configuration["SmtpSettings:Password"];
                 string url = $"http://localhost:3000/recuperarClave/?token=";
 
                 MailMessage mailMessage = new MailMessage(emailOrigen, to, subject, htmlBody);
