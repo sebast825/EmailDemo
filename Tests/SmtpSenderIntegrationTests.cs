@@ -60,5 +60,16 @@ namespace Tests
 
 
         }
+        [TestMethod]
+        public async Task SendEmailAsync_WithInvalidConfiguration_ShouldThrow()
+        {
+            var to = "";
+            string subjet = _configuration["EmailSettings:DefaultSubject"];
+            string body = _configuration["EmailSettings:DefaultHtmlBody"];
+
+            var ex = await Assert.ThrowsAsync<Exception>(()=> _smtpSender.SendEmailAsync(to, subjet, body));
+
+
+        }
     }
 }
