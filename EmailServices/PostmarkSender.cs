@@ -48,7 +48,6 @@ namespace EmailServices
             }
             catch (Exception ex)
             {
-                var msg = $"Error enviando email a {to}: {ex.Message}";
 
                 throw;
             }
