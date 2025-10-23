@@ -32,5 +32,13 @@ namespace Tests
             await _postmarkSender.SendEmailAsync(to, subjet, body);
             Assert.IsTrue(true);
         }
+        [TestMethod]
+        public async Task SendEmailAsync_WhenEmptyRecipient_ShouldThrowPostmarkValidationException()
+        {
+            string to = "";
+            string subjet = _configuration["EmailSettings:DefaultSubject"];
+            string body = _configuration["EmailSettings:DefaultHtmlBody"];
+            var ex = await Assert.ThrowsExactlyAsync<PostmarkDotNet.Exceptions.PostmarkValidationException>(()=>   _postmarkSender.SendEmailAsync(to, subjet, body));
+        }
     }
 }
