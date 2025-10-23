@@ -61,10 +61,10 @@ To switch between them:
 Example:
 ```csharp
 // For Postmark
-services.AddScoped<EmailSenderI, PostmarkSender>();
+services.AddScoped<IEmailSender, PostmarkSender>();
 
 // For SMTP
-services.AddScoped<EmailSenderI, SmtpSender>();
+services.AddScoped<IEmailSender, SmtpSender>();
 ```
 
 ## Send Messages
@@ -99,14 +99,4 @@ To enable sending emails via Postmark:
 1. Create a free account on <a href="https://postmarkapp.com/" target="_blank">Postmark</a>.
 2. Verify a sender email or domain.
 3. Obtain your API Key and configure it in the project.
-
-
-
-
-
-## Naming Convention for Interfaces
-
-In this project, all interfaces are named with an **`I` suffix** (e.g., `EmailSenderI`, `EmailOptionI`).
-
-Although the standard C# convention uses a leading `I` (e.g., `IEmailSender`), this project follows a trailing `I` pattern for easier discoverability when searching or using autocomplete in large codebases.
 
