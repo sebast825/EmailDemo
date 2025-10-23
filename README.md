@@ -42,6 +42,10 @@ An `appsettings.json` file is required to set up SMTP credentials and sender inf
 
 - Configure appsettings.json
 - Run the console project
+  
+```
+dotnet run --project EmailServiceDemo
+```
 - The app will send predefined or custom emails depending on configuration
 
 
@@ -63,6 +67,31 @@ services.AddScoped<EmailSenderI, PostmarkSender>();
 services.AddScoped<EmailSenderI, SmtpSender>();
 ```
 
+## Send Messages
+
+Use the method you need dependig of wich message want to send.
+
+```c#
+await emailService.SendUserNotificationAsync(
+    configuration["EmailSettings:DefaultRecipient"],
+    configuration["EmailSettings:DefaultSubject"],
+    configuration["EmailSettings:DefaultTextBody"]);
+
+await emailService.Welcome(configuration["EmailSettings:DefaultRecipient"]);
+
+```
+
+## Email Templates
+
+Check EmailTemplatesOptions for existing template types.
+
+To add a new template:
+
+- Create a method in EmailTemplatesOptions that returns an EmailTemplateContent object.
+- Add a corresponding method in EmailOption to send the new template.
+- Create an interface if you need to expose it publicly.
+
+
 ## Postmark Configuration (Optional)
 
 To enable sending emails via Postmark:
@@ -70,6 +99,10 @@ To enable sending emails via Postmark:
 1. Create a free account on <a href="https://postmarkapp.com/" target="_blank">Postmark</a>.
 2. Verify a sender email or domain.
 3. Obtain your API Key and configure it in the project.
+
+
+
+
 
 ## Naming Convention for Interfaces
 
