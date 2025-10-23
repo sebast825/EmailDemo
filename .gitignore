@@ -1,4 +1,5 @@
 **/appSettings.json
+**/appsettings.Test.json
 **/bin/
 **/obj/
 .vs/
