@@ -21,8 +21,10 @@ var provider = services.BuildServiceProvider();
 
 var emailService = provider.GetRequiredService<IEmailOption>();
 
-//await emailService.Welcome(configuration["CorreoSettings:EmailDestino"]);
-await emailService.SendUserNotificationAsync(configuration["EmailSettings:DefaultRecipient"], "Carmelio", "Este es un mensaje importante!");
+await emailService.SendUserNotificationAsync(
+    configuration["EmailSettings:DefaultRecipient"],
+    configuration["EmailSettings:DefaultSubject"],
+    configuration["EmailSettings:DefaultTextBody"]);
 
 
 Console.WriteLine("Message Sent!");
